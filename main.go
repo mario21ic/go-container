@@ -43,7 +43,7 @@ func ns() {
     cg()
 
     must(syscall.Sethostname([]byte("inside-container")))
-    must(syscall.Chroot("/home/rootfs"))
+    must(syscall.Chroot("/rootfs"))
     must(os.Chdir("/"))
     must(syscall.Mount("proc", "proc", "proc", 0, ""))
 
